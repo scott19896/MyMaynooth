@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" type="text/css" href="MM.css">
+  <script src="https://www.gstatic.com/firebasejs/4.6.0/firebase.js"></script>
+      <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+  <style type="text/css"> #contacts p, #contacts p.lead{ margin: 0; } </style>
+    <!-- update the version number as needed -->
+    <script defer src="/__/firebase/4.6.0/firebase-app.js"></script>
+    <!-- include only the Firebase features as you need -->
+    <script defer src="/__/firebase/4.6.0/firebase-auth.js"></script>
+    <script defer src="/__/firebase/4.6.0/firebase-database.js"></script>
+    <script defer src="/__/firebase/4.6.0/firebase-messaging.js"></script>
+    <script defer src="/__/firebase/4.6.0/firebase-storage.js"></script>
+    <!-- initialize the SDK after all desired features are loaded -->
+    <script defer src="/__/firebase/init.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    
+    </head><script>
+    $(function() {
+  const config = {
+    apiKey: "AIzaSyCFW7ylQ2im6knlgQVAXjxDjmncECjAWC8",
+    authDomain: "mymaynoothproject-231017.firebaseapp.com",
+    databaseURL: "https://mymaynoothproject-231017.firebaseio.com",
+    projectId: "mymaynoothproject-231017",
+    storageBucket: "mymaynoothproject-231017.appspot.com",
+    messagingSenderId: "508311719577"
+  };
+  firebase.auth().onAuthStateChanged(function(user){
+          if(user){
+              console.log("Signed In");
+          }
+          else{
+              window.location.replace("RegisterMyM.html");
+          }
+  });
+  //firebase.initializeApp(config);
+        /*$('#Events').on("click")({
+            window.location.replace("EventsMyM.html");
+                        });*/
+            document.getElementById('#Events').onClick(window.location.replace("EventsMyM.html"));
+        
+        $('#Discounts').on("click",event=>{
+           event.preventDefault();
+            window.location.replace("homeindex (1).html");
+        });
+        /*$('#Groups').on("click",event=>{
+           event.preventDefault();
+            window.location.replace("");
+        });*/
+  $("#js-logout").on("click", event => {
+    event.preventDefault();
+    firebase.auth().signOut().then(function(){
+   window.location.replace("RegisterMyM.html");
+    })
+  // Sign-out successful.
+      
+.catch(function(error) {
+  // An error happened.
+      console.log("Unsuccessful Log Out");
+});
+  });
+});
+
+    </script>
+    
+   
+    <body id=homeMyMaynoothBody>
+         
+   <div id=spacer></div>
+
+  <h1 class=hmmh1>MyMaynooth</h1>
+ <div class=containerHome>
+        <button class="js-submitHome" id=Events>Events</button>
+     
+       
+        <button class="js-submitHome" id=Discounts>Discounts</button>
+     
+      
+        <button class="js-submitHome" id=Groups>Groups</button>
+      <div class="signout"><a class="signout" id="js-logout">Log Out</a></div>
+        </div>
+        
+</body>
