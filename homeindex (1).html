@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+  <head>
+      <!--<link rel="stylesheet" type="text/css" href="MM.css">-->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	<title> MyMaynooth Homepage</title>
+<!-- 
+	<link href="https://fonts.googleleapis.com/css?family=Roboto:300,500" rel="stylesheet">
+ --><script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/4.5.1/firebase.js"></script>
+      <!-- update the version number as needed -->
+    <script defer src="/__/firebase/4.5.2/firebase-app.js"></script>
+    <!-- include only the Firebase features as you need -->
+    <script defer src="/__/firebase/4.5.2/firebase-auth.js"></script>
+
+    <script defer src="/__/firebase/4.5.2/firebase-database.js"></script>
+    <script defer src="/__/firebase/4.5.2/firebase-messaging.js"></script>
+    <script defer src="/__/firebase/4.5.2/firebase-storage.js"></script>
+    <!-- initialize the SDK after all desired features are loaded -->
+    <script defer src="/__/firebase/init.js"></script>
+	<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyCFW7ylQ2im6knlgQVAXjxDjmncECjAWC8",
+    authDomain: "mymaynoothproject-231017.firebaseapp.com",
+    databaseURL: "https://mymaynoothproject-231017.firebaseio.com",
+    projectId: "mymaynoothproject-231017",
+    storageBucket: "mymaynoothproject-231017.appspot.com",
+    messagingSenderId: "508311719577"
+  };
+  firebase.initializeApp(config);
+  firebase.auth().onAuthStateChanged(function(user){
+          if(user){
+              console.log("Signed In");
+          }
+          else{
+              window.location.replace("RegisterMyM.html");
+          }
+  });
+
+        
+var ref = firebase.database().ref('Deals').child('Tesco');
+ref.on ("child_added", snap => {
+
+var category = snap.child("Category").val();
+var price = snap.child("Price").val();
+var product = snap.child("Product").val();
+
+$("#table").append("<tr><td>" + category + "</td><td>" + price +  "</td><td>" + product + "</tr></td>");
+
+});
+
+/*var ref = firebase.database().ref('Deals').child('Lidl');
+ref.on ("child_added", snap => {
+
+var category = snap.child('Category').val();
+var price = snap.child("Price").val();
+var product = snap.child("Product").val();
+
+
+$("#table").append("<tr><td>" + category + "</td><td>" + price +  "</td><td>" + product + "</tr></td>");
+});*/</script>
+	<link rel="stylesheet" type="text/css" href="style.css">
+
+
+ </head>  
+<body>
+
+<pre id="object1"> </pre>
+<div id="object"> 
+<!-- Displaying Data in a Table -->
+<h1> Discount</h1>
+<table> 
+<tr>
+ <td> Category </td>
+ <td>  Price </td>
+ <td> Product </td>
+</tr>
+<tbody id ="table" >
+</tbody>
+
+	<!--<script type="text/javascript" src="homeapp.js"> </script>-->
+    </table></div>
+  </body>
+</html>
+
