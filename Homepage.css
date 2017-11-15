@@ -1,0 +1,35 @@
+body {
+ background-image: url("http://blog.hostbaby.com/wp-content/uploads/2013/07/scuffedstatic_dark1400x900.jpg");
+ text-align: center;
+}
+
+a:link, a:visited  {
+    text-decoration: none;
+    background-color: #f44336;
+    color: white;
+    padding: 40px 65px;
+    text-align: center; 
+    text-decoration: none;
+    display: inline-block;
+   //width: 40%;
+   //height: 30%;
+   // margin: 10px;
+    
+}
+
+a:hover, a:active {
+    background-color: red;
+    margin: 10px;
+}
+
+
+h1 {
+  position: fixed; /* or absolute */
+  top: 5%;
+  left: 50%;
+  //margin-top: -50px;
+  //margin-left: -100px;
+  //transform: translate(-50%, -50%);
+  color:gold
+}
+
