@@ -1,0 +1,196 @@
+#eventsMyMaynoothBody {
+  font-family: "Open Sans", sans-serif;
+  line-height: 1.25;
+    background-color: black;
+}
+table {
+  border: 1px solid #ccc;
+  border-collapse: collapse;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  table-layout: fixed;
+}
+table caption {
+  font-size: 1.5em;
+  margin: .5em 0 .75em;
+}
+table tr {
+  background: #f8f8f8;
+  border: 1px solid #ddd;
+  padding: .35em;
+}
+table th,
+table td {
+  padding: .625em;
+  text-align: center;
+}
+table th {
+  font-size: .85em;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+}
+@media screen and (max-width: 600px) {
+  table {
+    border: 0;
+  }
+  table caption {
+    font-size: 1.3em;
+  }
+  table thead {
+    border: none;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+  }
+  table tr {
+    border-bottom: 3px solid #ddd;
+    display: block;
+    margin-bottom: .625em;
+  }
+  table td {
+    border-bottom: 1px solid #ddd;
+    display: block;
+    font-size: .8em;
+    text-align: right;
+  }
+  table td:before {
+    /*
+    * aria-label has no advantage, it won't be read inside a table
+    content: attr(aria-label);
+    */
+    content: attr(data-label);
+    float: left;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+  table td:last-child {
+    border-bottom: 0;
+  }
+ 
+}
+   .emmh1{
+        color:gold;
+    }
+    .signout{
+        
+  color:gold;
+  float:center;
+  padding: 5px;
+  margin:10px
+        }
+.signout:hover{
+    cursor: default;
+    color: aqua;
+ /*border: 5px solid #c6c6c6;*/
+   
+}
+/*HomeMyMaynooth*/
+ .hmmh1{
+            text-align: center;
+        }
+        #homeMyMaynoothBody{
+  background-color:black;
+  color:gold;
+}
+.containerHome{
+  text-align: center;
+    
+}
+
+p{
+  color:white;
+}
+
+     .js-submitHome{
+       
+         color: white;
+         border:20px 20px 20px 20px;
+         border-color: gold;
+         margin: 0.75rem;
+         width:70%;
+         height:150px ;
+         font-size: 30px;
+         border-radius: 15px;
+    }
+        .js-submitHome:hover{
+       opacity: 0.5;
+         color: gold;
+         border:20px 20px 20px 20px;
+         border-color: white;
+         
+         width:70%;
+         height:150px ;
+         font-size: 30px;
+    }
+        #Events{
+            background-image: url("https://media.textadventures.co.uk/coverart/b69281d8-93b6-4c6a-a964-441dddfe8a9d.jpg");
+         background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+        #Discounts{
+            background-image: url("http://37dawsonstreet.ie/wp-content/uploads/2012/09/not_just_a_bar.jpg");
+         background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+        #Groups{
+            background-image: url("https://www.maynoothuniversity.ie/sites/default/files/assets/images/Library-at-night-Edit.jpg");
+         background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            
+        }
+        #spacer{
+            height:1px;
+        }
+        a{
+            font-size: 20px;
+        }
+/*LoginPage*/
+       .lmmh1{
+            text-align: center;
+        }
+        
+        #LoginBody{
+   
+ background-color:black;
+  color:gold;
+}
+.containerLog{
+  padding: 1rem;
+}
+
+#link-registerLog{
+  padding:10px;
+  color:gold;
+}
+
+
+/*Register*/
+.rmmh1{
+            text-align: center;
+        }
+           #registerBody{
+  background-color:black;
+  color:gold;
+}
+.containerReg{
+  padding: 1rem;
+}
+.incorrect{
+  color:red;
+  display:none;
+}
+#link-loginReg{
+  padding:10px;
+  color:gold;
+}
+#PlaceholderDegreeReg{
+  color:green;
+}
