@@ -1,0 +1,150 @@
+ <!DOCTYPE html>
+<html>
+<head>
+      <link rel="stylesheet" type="text/css" href="MyMaynooth.css">
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+  
+      <script src="https://www.gstatic.com/firebasejs/4.6.0/firebase.js"></script>
+<meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+  <style type="text/css"> #contacts p, #contacts p.lead{ margin: 0; } </style>
+    <!-- update the version number as needed -->
+    <script defer="" src="/__/firebase/4.6.0/firebase-app.js"></script>
+    <!-- include only the Firebase features as you need -->
+    <script defer="" src="/__/firebase/4.6.0/firebase-auth.js"></script>
+    <script defer="" src="/__/firebase/4.6.0/firebase-database.js"></script>
+    <script defer="" src="/__/firebase/4.6.0/firebase-messaging.js"></script>
+    <script defer="" src="/__/firebase/4.6.0/firebase-storage.js"></script>
+      
+    <!-- initialize the SDK after all desired features are loaded-->
+    <script defer="" src="/__/firebase/init.js"></script>
+      
+      
+
+    <script>
+   $(function() {
+  const config = {
+    apiKey: "AIzaSyCFW7ylQ2im6knlgQVAXjxDjmncECjAWC8",
+    authDomain: "mymaynoothproject-231017.firebaseapp.com",
+    databaseURL: "https://mymaynoothproject-231017.firebaseio.com",
+    projectId: "mymaynoothproject-231017",
+    storageBucket: "mymaynoothproject-231017.appspot.com",
+    messagingSenderId: "508311719577"
+  };
+  //firebase.initializeApp(config);
+  $(".js-form").on("submit", event => {
+    event.preventDefault();
+      //var admin=require("firebase-admin");
+      var db=firebase.database();
+      var ref=db.ref("Users");
+      const name= $("#js-name").val();
+    const email = $("#js-email").val();
+      
+    const password = $("#js-password").val();
+    const message = "New User Registered";
+      var yourSelect=document.getElementById("degreeSelect");
+    const degree=yourSelect.options[yourSelect.selectedIndex].value;
+      var users=ref.child(degree);
+    const age=$("#js-age").val();
+    var dt = new Date();
+    var time = dt.getHours() + ":" + dt.getMinutes() + ":" + dt.getSeconds();
+    console.log(email, password,degree);
+    firebase.auth().createUserWithEmailAndPassword(email, password)
+      .then(user => {
+       firebase.auth().signInWithEmailAndPassword(email, password)
+        .then(user =>{
+           users=ref.child(degree).child(name); users.set({name,email,message,degree,age,time,},function(error){
+                if(error)
+                    console.log("No Data Saved");
+                else
+                    window.location.replace("homeMyMaynooth.html");
+            })
+            })
+        .catch(error=>{
+              console.log(error);
+               });
+       })
+      .catch(error => {
+        console.log("Create Error");
+      });
+       
+      })
+      
+      
+      });
+      
+  
+
+    </script><style>
+        /*   .rmmh1{
+            text-align: center;
+        }
+           #registerBody{
+  background-color:black;
+  color:gold;
+}
+.container{
+  padding: 1rem;
+}
+.incorrect{
+  color:red;
+  display:none;
+}
+#link-login{
+  padding:10px;
+  color:gold;
+}
+#PlaceholderDegree{
+  color:green;
+}
+          
+*/
+    </style></head>
+
+            
+<body id="registerBody">
+  
+
+  <div class="containerReg">
+     <h1 class="rmmh1">MyMaynooth: Register your Business</h1>
+    <div class="row">
+      <div class="col-xs-12">
+        <form class="js-form">
+          <label for="js-form">Register</label>
+            <div class="form-group">
+
+            <input placeholder="Your Name" id="js-name" class="form-control" type="text">
+          </div>
+          <div class="form-group">
+          
+          <input placeholder="Business" id="js-name" class="form-control" type="text">
+          </div>
+          <div class="form-group">
+
+            <input placeholder="Email" id="js-email" class="form-control" type="email">
+          </div>
+          <div class="form-group">
+
+            <input placeholder="Password" id="js-password" class="form-control" type="password">
+          </div>
+          <div class="form-group">
+
+       
+
+      
+          <div class="incorrect">
+            <p>Incorrect Details</p>
+          </div>
+          <button id="js-submit" class="btn btn-primary">Register</button>
+          <a id="link-loginReg" href="RegisterMyM.html">Already A Member?</a>
+          
+          
+     
+        
+        
+        
+        
+</body>
+</html> 
