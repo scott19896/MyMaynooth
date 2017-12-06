@@ -1,0 +1,49 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<title>View Competitors</title>
+<link rel="stylesheet" href=style.css />
+</head>
+
+<body>
+
+
+<div class="mainDiv" align="left">
+<h1>Events</h1>
+<table>
+ <thead>
+ <tr>
+ <td>provider</td>
+ <td>name</td>
+ <td>description</td>
+ <td>ARTS</td>
+ <td>CSSE</td>
+ <td>OTHER</td>
+ </tr>
+</thead>
+<tbody id="table_body">
+
+</tbody>
+</table>
+</div>
+
+<script src="https://www.gstatic.com/firebasejs/4.7.0/firebase.js"></script>
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyCFW7ylQ2im6knlgQVAXjxDjmncECjAWC8",
+    authDomain: "mymaynoothproject-231017.firebaseapp.com",
+    databaseURL: "https://mymaynoothproject-231017.firebaseio.com",
+    projectId: "mymaynoothproject-231017",
+    storageBucket: "mymaynoothproject-231017.appspot.com",
+    messagingSenderId: "508311719577"
+  };
+  firebase.initializeApp(config);
+</script>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="index.js"></script>
+
+
+</body>
+</html>
