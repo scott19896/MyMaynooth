@@ -1,9 +1,9 @@
-﻿ var rootRef=firebase.database().ref().child("Events/Entertainment");
- var rootRef2=firebase.database().ref().child("Events/Food");
+﻿ var rootRef=firebase.database().ref().child("Events/Entertainment"); //use to retrieve entertainment events
+ var rootRef2=firebase.database().ref().child("Events/Food"); //use to retrieve food offers
  
- rootRef.on("child_added", snap => {
+ rootRef.on("child_added", snap => { //fill the empty event table 
   
-  var provider=snap.child("provider".val());
+  var provider=snap.child("provider".val()); 
   var name=snap.child("name".val());
   var description=snap.child("description".val());
   var ARTS=snap.child("ARTS".val());
@@ -16,8 +16,7 @@
   });
 
 
- rootRef2.on("child_added", snap => {
-  
+ rootRef2.on("child_added", snap => {  //fill food table
   
   var provider=snap.child("provider".val());
   var name=snap.child("name".val());
