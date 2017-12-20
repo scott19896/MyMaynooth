@@ -29,24 +29,25 @@
     storageBucket: "mymaynoothproject-231017.appspot.com",
     messagingSenderId: "508311719577"
   };
-  firebase.auth().onAuthStateChanged(function(user){
+  //firebase.initializeApp(config);
+        firebase.auth().onAuthStateChanged(function(user){
           if(user){
               console.log("Signed In");
           }
           else{
-              window.location.replace("RegisterMyM.html");
+              window.location.replace("Login.html");
           }
   });
-  //firebase.initializeApp(config);
+  
         /*$('#Events').on("click")({
             window.location.replace("EventsMyM.html");
                         });*/
-            document.getElementById('#Events').onClick(window.location.replace("EventsMyM.html"));
+            
         
-        $('#Discounts').on("click",event=>{
+        /*$('#Discounts').on("click",event=>{
            event.preventDefault();
             window.location.replace("homeindex (1).html");
-        });
+        });*/
         /*$('#Groups').on("click",event=>{
            event.preventDefault();
             window.location.replace("");
@@ -54,7 +55,7 @@
   $("#js-logout").on("click", event => {
     event.preventDefault();
     firebase.auth().signOut().then(function(){
-   window.location.replace("RegisterMyM.html");
+   window.location.replace("Login.html");
     })
   // Sign-out successful.
       
@@ -74,13 +75,13 @@
 
   <h1 class=hmmh1>MyMaynooth</h1>
  <div class=containerHome>
-        <button class="js-submitHome" id=Events>Events</button>
+     <a class=js-submitHome href="EventsMyM.html"><button class="js-submitHome" id=Events>Events</button></a>
      
        
-        <button class="js-submitHome" id=Discounts>Discounts</button>
+     <a class=js-submitHome href="homeindex.html"><button class="js-submitHome" id=Discounts>Discounts</button></a>
      
       
-        <button class="js-submitHome" id=Groups>Groups</button>
+     <a class=js-submitHome href="Groups.html"><button class="js-submitHome" id=Groups>Groups</button></a>
       <div class="signout"><a class="signout" id="js-logout">Log Out</a></div>
         </div>
         

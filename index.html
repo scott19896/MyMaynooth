@@ -8,18 +8,16 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
-  <style type="text/css"> #contacts p, #contacts p.lead{ margin: 0; } </style>
-    <!-- update the version number as needed -->
-    <script defer src="/__/firebase/4.6.0/firebase-app.js"></script>
-    <!-- include only the Firebase features as you need -->
-    <script defer src="/__/firebase/4.6.0/firebase-auth.js"></script>
-    <script defer src="/__/firebase/4.6.0/firebase-database.js"></script>
-    <script defer src="/__/firebase/4.6.0/firebase-messaging.js"></script>
-    <script defer src="/__/firebase/4.6.0/firebase-storage.js"></script>
+  <style type="text/css"> #contacts p, #contacts p.lead{ margin: 0; } 
+      #studReg{
+          display: block;
+      }
+      #BusReg{
+          display: none;
+      }
       
-    <!-- initialize the SDK after all desired features are loaded-->
-    <script defer src="/__/firebase/init.js"></script>
-      
+      </style>
+   
       
 
     </head>
@@ -71,19 +69,84 @@
       });
        
       })
+       
+       $(".js-form2").on("submit", event => {
+    event.preventDefault();
+      //var admin=require("firebase-admin");
+      var db=firebase.database();
+      var ref=db.ref("Business Names");
+      const name= $("#js-nameB").val();
+    const email = $("#js-emailB").val();
+    const id = $("#js-idB").val();
+    const password = $("#js-passwordB").val();
+    const message = "New Business Registered";
+      var yourSelect=document.getElementById("companySelect");
+    const industry=yourSelect.options[yourSelect.selectedIndex].value;
       
+    var dt = new Date();
+    var time = dt.getHours() + ":" + dt.getMinutes() + ":" + dt.getSeconds();
+    console.log(email, password,industry);
+    firebase.auth().createUserWithEmailAndPassword(email, password)
+      .then(user => {
+       firebase.auth().signInWithEmailAndPassword(email, password)
+        .then(user =>{
+           var business=ref.child(industry).child(name); business.set({name,email,id,message,industry,time,},function(error){
+                if(error)
+                    console.log("No Data Saved");
+                else
+                    window.location.replace("BusinessHome.html");
+            })
+            })
+        .catch(error=>{
+              console.log(error);
+               });
+       })
+      .catch(error => {
+        console.log("Create Error");
+      });
+       
+      })
       
+
+
+       
+document.getElementById("ButStud").addEventListener("click",r =>{
+       $("#studReg").css("display","block");
+        
+        $("#BusReg").css("display","none");
+       });
+ 
+document.getElementById("ButBus").addEventListener("click",r =>{
+       $("#studReg").css("display","none");
+        
+        $("#BusReg").css("display","block");
+       });
       });
       
   
 
     </script>
+     <!-- update the version number as needed -->
+    <script defer src="/__/firebase/4.6.0/firebase-app.js"></script>
+    <!-- include only the Firebase features as you need -->
+    <script defer src="/__/firebase/4.6.0/firebase-auth.js"></script>
+    <script defer src="/__/firebase/4.6.0/firebase-database.js"></script>
+    <script defer src="/__/firebase/4.6.0/firebase-messaging.js"></script>
+    <script defer src="/__/firebase/4.6.0/firebase-storage.js"></script>
+      
+    <!-- initialize the SDK after all desired features are loaded-->
+<script defer src="/__/firebase/init.js"></script>
+      
        
 <body id=registerBody>
-  
-
+  <h1 class=rmmh1>MyMaynooth</h1>
+<!--    <center><h3 style="color:white">"Your Community Discount App"</h3></center>-->
+<div id=sort><button class="sort" id=ButStud>Student Registration</button>
+        <button class="sort" id=ButBus>Business Registration</button></div>
+    <div id=register123>
+    <div id=studReg>
   <div class="containerReg">
-     <h1 class=rmmh1>MyMaynooth</h1>
+     
     <div class="row">
       <div class="col-xs-12">
         <form class="js-form">
@@ -118,9 +181,56 @@
             <p>Incorrect Details</p>
           </div>
           <button id="js-submit" class="btn btn-primary">Register</button>
-          <a id="link-loginReg" href='RegisterMyM.html'>Already A Member?</a>
+          <a id="link-loginReg" href='Login.html'>Already A Member?</a>
         </form>
       </div>
     </div>
   </div>
+    </div>
+    
+    <div id=BusReg>
+  <div class="containerBusiness">
+    
+    <div class="row">
+      <div class="col-xs-12">
+        <form class="js-form2">
+          <label for="js-form2">Register Business</label>
+            <div class="form-group">
+
+            <input placeholder="Company Name" type="text" id="js-nameB" class="form-control">
+          </div>
+          <div class="form-group">
+
+            <input placeholder="Company Email" type="email" id="js-emailB" class="form-control">
+          </div>
+            <div class="form-group">
+
+            <input placeholder=ID type="text" id="js-idB" class="form-control">
+          </div>
+          <div class="form-group">
+
+            <input placeholder=Password type="password" id="js-passwordB" class="form-control">
+          </div>
+          <div class="form-group">
+
+            <!--<input placeholder=Degree type="text" id="js-degree" class="form-control">-->
+            <select class="form-control" id="companySelect">
+             <option value="genre">Industry</option>
+             <option value="Ents">Entertainment</option>
+             <option value="Academic">Academic</option>
+             <option value="Food">Food</option>
+            </select>
+          </div>
+          
+          <div class="incorrect">
+            <p>Incorrect Details</p>
+          </div>
+          <button id="js-submit" class="btn btn-primary">Register</button>
+          <a id="link-loginReg" href='Login.html'>Already A Member?</a>
+        </form>
+      </div>
+    </div>
+  </div>
+    </div>
+    </div>
 </body>

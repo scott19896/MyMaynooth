@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html>
+  <head>
+      <link rel="stylesheet" type="text/css" href="MM.css">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	<title> MyMaynooth Homepage</title>
+
+	
+	
+	<script src="https://www.gstatic.com/firebasejs/4.6.2/firebase.js"></script>
+	
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+<script src="https://www.gstatic.com/firebasejs/4.6.2/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/4.6.2/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/4.6.2/firebase-database.js"></script>
+<script src="https://www.gstatic.com/firebasejs/4.6.2/firebase-firestore.js"></script>
+<script src="https://www.gstatic.com/firebasejs/4.6.2/firebase-messaging.js"></script>
+<script> $(document).ready(function(){ // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyCFW7ylQ2im6knlgQVAXjxDjmncECjAWC8",
+    authDomain: "mymaynoothproject-231017.firebaseapp.com",
+    databaseURL: "https://mymaynoothproject-231017.firebaseio.com",
+    projectId: "mymaynoothproject-231017",
+    storageBucket: "mymaynoothproject-231017.appspot.com",
+    messagingSenderId: "508311719577"
+  };
+  firebase.initializeApp(config);
+ 
+ 
+
+        
+var ref = firebase.database().ref('Deals').child('Drinks');
+ref.on("child_added", snap => {
+
+var shop = snap.child("Shop").val();
+var price = snap.child("Price").val();
+var product = snap.child("Product").val();
+var review = snap.child("review").val();
+    var name=snap.key;
+    
+    var newRow=$("#entBody").append("<button class='Discounts' id='"+product+"'>"+name+"</button>");
+    var btn=document.getElementsByClassName("Discounts");
+       
+    for(i=0;i<btn.length;i++)
+        {
+            btn[i].onclick= function (){
+                modal.style.display="block";
+            }
+        }
+    $("button").click(function(){
+        var newName=$(this).html();
+        var modRef=firebase.database().ref('Deals').child('Drinks').child(newName);
+        modRef.on("value", snap => {
+	    var shopM = snap.child("Shop").val();
+        var priceM = snap.child("Price").val();
+        var productM = snap.child("Product").val();
+        var reviewM = snap.child("review").val();
+        para.innerHTML="Price:"+priceM;
+        footer.innerHTML=shopM;
+        header.innerHTML=productM;    
+        })
+        });
+
+    var modal = document.getElementById('myModal');
+        var para=document.getElementById('modalInfo');
+        var footer=document.getElementById('modFoot');
+        var header=document.getElementById('modHead');
+
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
+
+// When the user clicks the button, open the modal 
+btn.onclick = function() {
+    modal.style.display = "block";
+}
+
+ 
+ 
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() {
+    modal.style.display = "none";
+}
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display="none";
+}
+}
+// Connecting database and review button
+
+// function t() {
+// 	console.log(1);
+// }
+
+
+
+//var text = document.getElementById('add');
+//var x=1;
+//console.log(text);
+// text.onclick= function (){
+// //var text = document.getElementById('add').value;
+// console.log(1);
+//   var data={
+//   review:document.getElementById('txt').value
+//   };
+//   firebase.database().ref('Deals/Drinks/Rum').update(data);
+//    }
+//    
+    $("#log").on("click", event => {
+    event.preventDefault();
+    firebase.auth().signOut().then(function(){
+   window.location.replace("Login.html");
+    })
+})
+    var text = document.getElementById('add');
+var x=1;
+console.log(text);
+ text.onclick= function (){
+ window.location.reload();
+ console.log(1);
+ 
+
+   var data={
+   review:document.getElementById('txt').value
+   };
+
+   firebase.database().ref('Events/Food/').update(data);
+    var newRef = firebase.database().ref('Events/Food/').push(data);
+	var newID = newRef.name();
+	var newval= newRef.snap.val();
+    }
+var btn = document.getElementById("myBtn");
+var modal3=document.getElementById("myModal2")
+    btn.onclick = function() {
+        modal.style.display="block";
+    }
+    
+  
+
+});
+
+
+
+
+
+
+// 
+// var ref = firebase.database().ref('Deals').child('Food');
+// ref.on("child_added", snap => {
+// 
+// var shop = snap.child("Shop").val();
+// var price = snap.child("Price").val();
+// var product = snap.child("Product").val();
+// 
+// 
+// $("#table").append("<tr><td>" + price + "</td><td>" + product +  "</td><td>" + shop +  "</td><td>" + "<button class='myBtn'>Write a Review</button> <div class='myModal' class='modal'> <div class='modal-content'> <span class='close'>&times;</span> <textarea> </textarea> <button> Add Review </button></div></div>" + "</td></tr>");
+// 
+// // Get the modal
+// var modal = document.getElementClassName('myModal');
+// 
+// // Get the button that opens the modal
+// var btn = document.getElementClassName("myBtn");
+// 
+// // Get the <span> element that closes the modal
+// var span = document.getElementsByClassName("close")[0];
+// 
+// // When the user clicks the button, open the modal 
+// for(i=0;i<btn.length;i++){
+// 
+// btn[i].onclick = function() {
+//     modal.style.display = "block";
+// }
+// }
+// 
+//  
+//  
+// // When the user clicks on <span> (x), close the modal
+// span.onclick = function() {
+//     modal.style.display = "none";
+// }
+// 
+// // When the user clicks anywhere outside of the modal, close it
+// window.onclick = function(event) {
+//     if (event.target == modal) {
+//         modal.style.display = "none";
+//     }
+// }
+//   
+// });
+
+
+
+});</script>
+
+
+ </head>  
+<body>
+
+<div id="obj">
+<!-- 
+<button onclick='t()' id="g">dfjgh</button>
+ -->
+<!-- Displaying Data in a Table -->
+<center><h1> MyMaynooth</h1></center>
+     
+   <div id="myModal" class="modal">
+
+  <!-- Modal content -->
+  <div class="modal-content">
+    <div class="modal-header">
+      <span class="close">&times;</span>
+      <h2 id=modHead>Name</h2>
+    </div>
+    <div class="modal-body">
+        <p id=modalInfo></p>
+        
+    </div>
+    <div class="modal-footer">
+      <h3 id=modFoot>Provider-Location</h3>
+    </div>
+  </div>
+
+</div>
+    <div class=entCon>
+    
+  <h2 style="color:gold" class=emmh1>Discounts</h2>
+        <div id=entBody></div>
+       
+		<div id='myModal2' class='modal'> 
+		<div class='modal-content'> 
+		<span class='close'>&times;</span>
+		 <textarea id='txt'> </textarea>
+		<button id='add'> Add Review </button></div>
+		</div>
+    </div>
+    <div class=foodCon>
+ 
+        
+      
+    
+    </div>
+     <center><div class="signout" id=log><a class="signout" id="js-Sign">Log Out</a></div></center>
+    </div>
+  
+  </body>
+</html>
+

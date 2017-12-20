@@ -1,0 +1,304 @@
+#eventsMyMaynoothBody {
+  font-family: "Open Sans", sans-serif;
+  line-height: 1.25;
+    background-color: black;
+    
+}
+
+   .emmh1{
+        color:gold;
+    }
+    .signout{
+        
+  color:gold;
+  float:center;
+  padding: 5px;
+  margin:10px
+        }
+.signout:hover{
+    cursor: default;
+    color: aqua;
+ /*border: 5px solid #c6c6c6;*/
+   
+}
+.entCon{
+    text-align: center;
+   
+}
+.foodCon{
+    text-align: center;
+    display: none;
+}
+/* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content */
+.modal-content {
+    color: black;
+    position: relative;
+    background-color: #fefefe;
+    margin: auto;
+    padding: 0;
+    border: 1px solid #888;
+    width: 80%;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+    -webkit-animation-name: animatetop;
+    -webkit-animation-duration: 0.4s;
+    animation-name: animatetop;
+    animation-duration: 0.4s
+}
+
+/* Add Animation */
+@-webkit-keyframes animatetop {
+    from {top:-300px; opacity:0} 
+    to {top:0; opacity:1}
+}
+
+@keyframes animatetop {
+    from {top:-300px; opacity:0}
+    to {top:0; opacity:1}
+}
+
+/* The Close Button */
+.close {
+    color: white;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.modal-header {
+    padding: 2px 16px;
+    background-color: gold;
+    color: black;
+}
+
+.modal-body {padding: 2px 16px;}
+
+.modal-footer {
+    padding: 2px 16px;
+    background-color: gold;
+    color: black;
+}
+.Events{
+    color: white;
+         border:20px 20px 20px 20px;
+         border-color: gold;
+         margin: 0.75rem;
+         width:70%;
+         height:150px ;
+         font-size: 30px;
+         border-radius: 15px;
+     background-image: url("https://media.textadventures.co.uk/coverart/b69281d8-93b6-4c6a-a964-441dddfe8a9d.jpg");
+         background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+}
+.GEvents{
+    color: white;
+         border:20px 20px 20px 20px;
+         border-color: gold;
+         margin: 0.75rem;
+         width:70%;
+         height:70px ;
+         font-size: 20px;
+         border-radius: 15px;
+     background-image: url("https://media.textadventures.co.uk/coverart/b69281d8-93b6-4c6a-a964-441dddfe8a9d.jpg");
+         background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+}
+.Events:hover{
+       opacity: 0.5;
+         color: gold;
+         border:20px 20px 20px 20px;
+         border-color: white;
+         
+         width:70%;
+         height:150px ;
+         font-size: 30px;
+   
+    }
+.Discounts{
+    color: white;
+         border:20px 20px 20px 20px;
+         border-color: gold;
+         margin: 0.75rem;
+         width:70%;
+         height:150px ;
+         font-size: 30px;
+         border-radius: 15px;
+     background-image: url("http://37dawsonstreet.ie/wp-content/uploads/2012/09/not_just_a_bar.jpg");
+         background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+}
+.Discounts:hover{
+       opacity: 0.5;
+         color: gold;
+         border:20px 20px 20px 20px;
+         border-color: white;
+         
+         width:70%;
+         height:150px ;
+         font-size: 30px;
+   
+    }
+/*HomeMyMaynooth*/
+ .hmmh1{
+            text-align: center;
+        }
+        #homeMyMaynoothBody{
+  background-color:black;
+  color:gold;
+}
+.containerHome{
+  text-align: center;
+    
+}
+
+p{
+  color:black;
+}
+
+     .js-submitHome{
+       
+         color: white;
+         border:20px 20px 20px 20px;
+         border-color: gold;
+         margin: 0.75rem;
+         width:70%;
+         height:150px ;
+         font-size: 30px;
+         border-radius: 15px;
+    }
+        .js-submitHome:hover{
+       opacity: 0.5;
+         color: gold;
+         border:20px 20px 20px 20px;
+         border-color: white;
+         
+         width:70%;
+         height:150px ;
+         font-size: 30px;
+    }
+        #Events{
+            background-image: url("https://media.textadventures.co.uk/coverart/b69281d8-93b6-4c6a-a964-441dddfe8a9d.jpg");
+         background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+        #Discounts{
+            background-image: url("http://37dawsonstreet.ie/wp-content/uploads/2012/09/not_just_a_bar.jpg");
+         background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+        #Groups{
+            background-image: url("https://www.maynoothuniversity.ie/sites/default/files/assets/images/Library-at-night-Edit.jpg");
+         background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            
+        }
+        #spacer{
+            height:1px;
+        }
+        a{
+            font-size: 20px;
+        }
+/*LoginPage*/
+       .lmmh1{
+            text-align: center;
+        }
+        
+        #LoginBody{
+   
+ background-color:black;
+  color:gold;
+}
+.containerLog{
+  padding: 1rem;
+}
+
+#link-registerLog{
+  padding:10px;
+  color:gold;
+}
+#CustLog{
+    display: block;
+}
+#BusLog{
+    display:none;
+}
+.sort{
+    
+     background:none!important;
+     color:gold;
+     border:none; 
+     padding:0!important;
+     font: inherit;
+     /*border is optional*/
+     border-bottom:1px solid gold;
+    border-right:1px solid gold;
+     
+     cursor: pointer;
+
+}
+
+
+/*Register*/
+#register123{
+    width:100%;
+    text-align: center;
+}
+.rmmh1{
+            text-align: center;
+        }
+           #registerBody{
+  background-color:black;
+  color:gold;
+}
+.containerReg{
+  padding: 1rem;
+}
+.incorrect{
+  color:red;
+  display:none;
+}
+#link-loginReg{
+  padding:10px;
+  color:gold;
+}
+#link-BusReg{
+  padding:10px;
+  color:gold;
+}
+#PlaceholderDegreeReg{
+  color:green;
+}
+body{
+    color: gold;
+    background-color: black;
+}        
+
+    
