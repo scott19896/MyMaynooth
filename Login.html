@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+  <head>
+      <!--<link rel="stylesheet" type="text/css" href="MyMaynooth.css">-->
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+   
+  <link rel=stylesheet type="text/css" href=MM.css>
+      <script src=MyMaynooth.js></script>
+      <script src="https://www.gstatic.com/firebasejs/4.6.0/firebase.js"></script>
+<meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+  <style type="text/css"> #contacts p, #contacts p.lead{ margin: 0; } </style>
+    <!-- update the version number as needed-->
+    <script defer src="/__/firebase/4.6.0/firebase-app.js"></script>
+    <!-- include only the Firebase features as you need-->
+    <script defer src="/__/firebase/4.6.0/firebase-auth.js"></script>
+    <script defer src="/__/firebase/4.6.0/firebase-database.js"></script>
+    <script defer src="/__/firebase/4.6.0/firebase-messaging.js"></script>
+    <script defer src="/__/firebase/4.6.0/firebase-storage.js"></script>
+      
+    <!-- initialize the SDK after all desired features are loaded-->
+    <script defer src="/__/firebase/init.js"></script>
+     
+      
+
+    </head>
+    
+    
+    <body id=LoginBody>
+  
+  <h1 class=lmmh1>MyMaynooth</h1>
+<!--        <center><h3 style="color:white">"Your Community Discount App"</h3></center>-->
+        <div id=sort><button class="sort" id=ButStud>Student</button>
+        <button class="sort" id=ButBus>Business</button></div>
+ <div id=CustLog>
+  <div class="containerLog">
+    <div class="row">
+      <div class="col-xs-12">
+        <form class="js-form">
+          <label for="js-form">Login</label>
+          <div class="form-group">
+            <input placeholder=Email type="email" id="js-email" class="form-control">
+          </div>
+          <div class="form-group">
+            
+            <input placeholder=Password type="password" id="js-password" class="form-control">
+          </div>
+          <div class="incorrect">
+            <p>Incorrect Email/Password</p>
+          </div>
+            
+            <a href="homeMyMaynooth.html"><button id="js-submit" class="btn btn-primary">Login</button></a>
+          <a id="link-registerLog" href='index.html'>Create Account?</a>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+<div id=BusLog>
+    <div class="containerLog">
+    <div class="row">
+      <div class="col-xs-12">
+        <form class="js-formBus">
+          <label for="js-formBus">Business Login</label>
+          <div class="form-group">
+            <input placeholder=Email type="email" id="js-email2" class="form-control">
+          </div>
+          <div class="form-group">
+            
+            <input placeholder=Password type="password" id="js-password2" class="form-control">
+          </div>
+          <div class="incorrect">
+            <p>Incorrect Email/Password</p>
+          </div>
+            <a href="BusinessHome.html"><button id="js-submit" class="btn btn-primary">Login</button></a>
+          <a id="link-registerLog" href='index.html'>Create Account?</a>
+        </form>
+      </div>
+    </div>
+</div>
+</div>
+</body>
+</html>
+
+    
